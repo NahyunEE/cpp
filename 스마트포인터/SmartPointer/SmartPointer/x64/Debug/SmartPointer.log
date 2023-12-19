@@ -1,0 +1,32 @@
+﻿  smartpointer.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,61): error C2665: 'Student::Student': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+  (소스 파일 'smartpointer.cpp'을(를) 컴파일하는 중)
+  C:\Users\user\OneDrive\문서\GitHub\cpp\스마트포인터\SmartPointer\SmartPointer\smartpointer.cpp(57,2):
+  'Student::Student(char *,int)'일 수 있습니다.
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,61):
+  	'Student::Student(char *,int)': 인수 1을(를) 'const char [9]'에서 'char *'(으)로 변환할 수 없습니다.
+  		C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
+  		변환하면서 한정자가 손실됩니다.
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,61):
+  인수 목록 '(const char [9], _Ty)'을(를) 일치시키는 동안
+          with
+          [
+              _Ty=int
+          ]
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,61):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	C:\Users\user\OneDrive\문서\GitHub\cpp\스마트포인터\SmartPointer\SmartPointer\smartpointer.cpp(94,39):
+  	컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<Student> std::make_shared<Student,const char(&)[9],int>(const char (&)[9],int &&)'에 대한 참조를 확인하세요.
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
+  	컴파일되는 함수 템플릿 인스턴스화 'std::_Ref_count_obj2<Student>::_Ref_count_obj2<const char(&)[9],_Ty>(const char (&)[9],_Ty &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=int
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2094,18):
+  	컴파일되는 함수 템플릿 인스턴스화 'void std::_Construct_in_place<_Ty,const char(&)[9],int>(_Ty &,const char (&)[9],int &&) noexcept(false)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=Student
+          ]
+  
