@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <memory.h>
 #include <stdlib.h>
-#define LENGTH 5
+#define LENGTH 20
 
 int* stack();
 bool push(int* buffer, int sig_in);
@@ -22,14 +22,14 @@ int main() {
 
 
 	//Push One Element to Stack
-	bool sig =push(buffer, 1);
+	bool sig = push(buffer, 1);
 	if (!sig) {
 		printf("ERROR");
 	}
 
 	//Print Stack
 	print_buffer(buffer);
-	
+
 	//Pop One Element from Stack
 	pop(buffer);
 
@@ -37,8 +37,8 @@ int main() {
 	print_buffer(buffer);
 
 	//Push Element until Stack is full
-	for (int i = 0; i < LENGTH+1; ++i) {
-		sig=push(buffer, i * 10);
+	for (int i = 0; i < LENGTH + 1; ++i) {
+		sig = push(buffer, i * 10);
 		print_buffer(buffer);
 		if (!sig) {
 			printf("Stack is full\n");
@@ -46,28 +46,28 @@ int main() {
 	}
 
 	//Pop Element until Stack is Empty
-	for (int i = LENGTH; i >=0; --i) {
+	for (int i = LENGTH; i >= 0; --i) {
 		int temp = pop(buffer);
-		
+
 		print_buffer(buffer);
-		
+
 	}
 
-	
+
 	//Free Stack Memory
 	freeStack(buffer);
-	
+
 
 }
 
 void print_buffer(int* buffer) {
 
-	    printf("STACK: [ ");
-		for (int i = 0; i < LENGTH  ; i++) {
-			
-			printf("%d ",*(buffer+i));
-		}
-		printf(" ] \n");
+	printf("STACK: [ ");
+	for (int i = 0; i < LENGTH; i++) {
+
+		printf("%d ", *(buffer + i));
+	}
+	printf(" ] \n");
 }
 
 
@@ -75,18 +75,18 @@ void freeStack(int* buffer) {
 	free(buffer);
 }
 
-int* stack(){
-  
+int* stack() {
+
 	int* buffer = (int*)calloc(LENGTH, sizeof(int));
-    memset(buffer, -1, LENGTH * sizeof(int));
-    
+	memset(buffer, -1, LENGTH * sizeof(int));
+
 	return buffer;
 
 }
 
 bool push(int* buffer, int sig_in) {
 
-	
+
 	int i = 0;
 	if (full(buffer)) {
 		return false;
@@ -98,7 +98,7 @@ bool push(int* buffer, int sig_in) {
 		}
 
 		*(buffer + i) = sig_in;
-		
+
 		printf("PUSH: %d\n", sig_in);
 
 		return true;
@@ -126,17 +126,17 @@ int  pop(int* buffer) {
 
 		}
 	}
-		
-	int temp = *(buffer + (i-1));
-	
-	*(buffer + (i-1)) = -1;
+
+	int temp = *(buffer + (i - 1));
+
+	*(buffer + (i - 1)) = -1;
 	printf("POP: %d \n", (int)temp);
-	
+
 	return temp;
 
 }
 
-bool full(int *buffer) {
+bool full(int* buffer) {
 
 	if (buffer[LENGTH - 1] != -1) {
 		return true;
@@ -148,7 +148,7 @@ bool full(int *buffer) {
 }
 
 bool empty(int* buffer) {
-	if (*(buffer+0)== -1) {
+	if (*(buffer + 0) == -1) {
 		printf("Stack is Empty\n");
 		return true;
 	}
